@@ -1,9 +1,11 @@
 {
   "articulos": [
     {
-      "author": {"name": "Fernando"},
+      "author": {
+        "name": "Alejandro"
+      },
       "id": 2,
-      "title": "Todos los lunes"
+      "title": " Todos los lunes "
     },
     {
       "title": "Martes",
@@ -23,7 +25,47 @@
     "name": "typicode"
   },
   "tareas": [
-    {"id": 1, "name":"Clases curso Paginas", "isComplete": true},
-    {"id": 2, "name":"Reunion de trabajo", "isComplete": false}
+    {
+      "id": 1,
+      "name": "Clases curso Paginas",
+      "isComplete": false
+    },
+    {
+      "id": 2,
+      "name": "Reunion de trabajo",
+      "isComplete": true
+    },
+    {
+      "name": "Aprender Angular",
+      "isComplete": true,
+      "id": 3
+    },
+    {
+      "name": "Utilizar componentes",
+      "isComplete": false,
+      "id": 4
+    }
+  ],
+  "tareas2": [
+    {
+      "id": 1,
+      "name": "Clases curso Paginas",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Reunion de trabajo",
+      "isComplete": false
+    },
+    {
+      "name": "Aprender Angular",
+      "isComplete": false,
+      "id": 3
+    },
+    {
+      "name": "Utilizar componentes",
+      "isComplete": false,
+      "id": 4
+    }
   ]
 }
