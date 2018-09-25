@@ -7,6 +7,14 @@ export class ListaTareas {
         this.uRL = 'http://localhost:3000/tareas'
         this.aTareas = []
         this.nodoListaTareas = document.querySelector('#lista')
+
+        this.nodoBtnAdd = document.querySelector('#btnAdd')
+        this.nodoNewTarea = document.querySelector('#inTarea')
+        this.nodoBtnBorrarSelect = document.querySelector('#btn-borrar-select')
+        this.nodoBtnAdd.addEventListener('click', this.addTarea.bind(this))
+        this.nodoBtnBorrarSelect.addEventListener('click', this.borrarSelect.bind(this))
+
+
         this.fetchService = new FetchService()
         document.addEventListener('borrarTarea', this.borrarTarea.bind(this))
         document.addEventListener('ckeckCompleta', this.checkTarea.bind(this))
@@ -82,4 +90,45 @@ export class ListaTareas {
                 error => console.log(error)
             )
     }
+
+    addTarea() {
+        if (!this.nodoNewTarea.value) {return}
+        let newTarea = {
+            name: this.nodoNewTarea.value,
+            isComplete: false
+        }
+        this.nodoNewTarea.value = ''
+        let headers = new Headers()
+        headers.append("Content-Type", "application/json");
+        this.fetchService.send(this.uRL, {
+            method: 'POST', 
+            headers : headers,
+            body: JSON.stringify(newTarea)
+        }).then(
+            response => {
+                // console.log(response)
+
+                this.getTareas()
+            },
+            error => console.log(error)
+        )
+    }
+
+    borrarSelect() {
+        
+        let aSeleccionados = this.aTareas.filter(
+            (item) => { return item.isComplete}
+        )
+        // Si no controlamos el disabled del boton
+        // if(!aSeleccionados.length) {return}
+        if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
+
+        aSeleccionados.forEach(
+            (item, i, array) => {
+                let isUltima = (i+1 === array.length) ? true : false
+                this.borrarTarea( {id: item.id, isUltima: isUltima} )
+            }
+        ) 
+    }
+
 }
