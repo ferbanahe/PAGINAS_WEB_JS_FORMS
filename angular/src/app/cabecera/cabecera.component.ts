@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit {
+  titulo: string
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit() {
+    this.titulo = 'Proyecto Angular'
   }
 
 }
