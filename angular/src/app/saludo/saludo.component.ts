@@ -8,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class SaludoComponent implements OnInit {
 
   nombre: string
-  constructor() { }
+  nombre1:string
 
-  ngOnInit() {
+  constructor() {}
+
+ngOnInit() {
     this.nombre = 'Pepe'
+    this.nombre1 ="Juan"
   }
 
 btnBorrar() {
   this.nombre = ''
+  this.nombre1 = ''
   }
 }
