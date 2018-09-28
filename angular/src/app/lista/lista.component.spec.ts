@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaComponent } from './lista.component';
+import { TareasSimpleComponent } from '../tareas-simple/tareas-simple.component';
+import { FormsModule } from '@angular/forms';
 
 describe('ListaComponent', () => {
   let component: ListaComponent;
@@ -8,7 +10,14 @@ describe('ListaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListaComponent ]
+      declarations: [
+         ListaComponent,
+         TareasSimpleComponent,
+       ],
+       imports: [
+         FormsModule
+       ]
+
     })
     .compileComponents();
   }));
