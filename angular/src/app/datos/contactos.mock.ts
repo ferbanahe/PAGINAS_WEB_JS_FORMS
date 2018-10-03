@@ -6,7 +6,7 @@ export const USERS: Array<ContactoIf> = [
     name: {
         title: "ms",
         first: "kelly",
-        last: "reyes"
+        last: "reyes lópez"
     },
     location: {
         street: "9614 o'connell avenue",
